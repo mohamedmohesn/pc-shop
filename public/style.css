@@ -1,0 +1,47 @@
+.hi h2{
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .hi{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: white;
+  }
+  .hi input{
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    width: 100%;
+  }
+  .hi label{
+    display: block;
+    margin: 20px 0 10px;
+  }
+  .hi button{
+    margin-top: 30px;
+    border-radius: 36px;
+    background: #98d3c4;
+    border:0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+    display: block;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+  }
+  body{
+    margin: 5px 20px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    background: #ebebe9;
+    /* background-image:url(./wp.jpg) ; */
+    background-repeat:no-repeat;
+    background-size: cover;
+    
+  }

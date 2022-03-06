@@ -1,0 +1,31 @@
+<%- include('partials/header'); -%>
+<form class="hi" action="/addproduct" method="POST" enctype="multipart/form-data">
+    <h2>addproduct</h2>
+    <label for="name">name</label>
+    <input type="text" name="name"  /><br>
+
+    <label for="price">price</label>
+    <input type="number" name="price"  /><br>
+
+    <label for="number">numberitem</label>
+    <input type="number" name="number"  /><br>
+
+    <label for="categorie">categories</label>
+    <select id="categorie" name="categorie">
+        <option value="pc">pc</option>
+        <option value="laptop">laptop</option>
+        <option value="phone">phone</option>
+      </select>
+
+    <label for="image">image</label>
+    <input type="file" name="image"  /><br>
+    
+    <label for="description">description</label>
+    <textarea name="description" rows="5" cols="30" ></textarea><br>
+    
+    <button type="submit">addproduct</button>
+    
+  </form>
+
+  <%- include('partials/footer'); -%>
+  

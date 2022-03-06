@@ -1,0 +1,41 @@
+<%- include('partials/header'); -%>
+<div class="card">
+    <h5 class="card-header">user details</h5>
+    <div class="card-body">
+      <h5 class="card-title">name: <%= returns.order.name  %></h5>
+      <p class="card-text">email: <%= returns.order.email %></p>
+      <p class="card-text">address: <%= returns.order.address %></p>
+      <p class="card-text">phone: <%= returns.order.phone %></p>
+      <p class="card-text">priceitem: <%= returns.priceitem %></p>
+      <p class="card-text">itemqty: <%= returns.itemqty %></p>
+    </div>
+  </div>   
+  
+   <h2>product details</h2>
+  <div class="row row-cols-1 row-cols-md-3 " style="margin-left: 150px; margin-right: 150px;" >
+    <% let products = returns.product; %> 
+    <% if (products.length > 0) { %>
+        <% products.forEach(products => { %>
+    <div class="col mb-4">
+        <div class="card">
+          <img src="/uploads/<%= products.image %>" class="card-img card-img-top" alt="<%= products.name %>" />
+          <div class="card-body">
+              <h3 class="card-title">name: <%= products.name %></h3>
+            <h5 class="card-title">price of item: <%= products.price %> </h5>
+            <h5 class="card-title">number of item: <%= products.number %> </h5>
+            <h5 class="card-title">categories: <%= products.categories.category %> </h5>
+            <p class="card-text">description: <%= products.description %></p>
+          </div>
+        </div>
+      </div>
+      
+      <% })} %> 
+</div>
+
+  
+
+
+
+
+
+<%- include('partials/footer'); -%>

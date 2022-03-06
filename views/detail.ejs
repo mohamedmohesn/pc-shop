@@ -1,0 +1,62 @@
+<%- include('partials/header'); -%>
+<div class="hi">
+    <h2>product details</h2>
+    <img src="/uploads/<%= returns.image %>" alt="<%= returns.name %>" style="width: 300px;height: 200px;">
+    <label for="email">name</label>
+    <h5><%= returns.name %> </h5>
+    <label for="email">price</label>
+    <h5><%= returns.price %> </h5>
+    <label for="email">number</label>
+    <h5><%= returns.number %> </h5>
+    <label for="email">categories</label>
+    <h5><%= returns.categories.category %> </h5>
+    <label for="email">description</label>
+    <h5><%= returns.description %> </h5>
+    <% if (user) { %>
+    <button class="delete btn" data-doc="<%= returns._id %>" style="display: inline;">
+        delete
+      </button>
+      <button class="update btn" data-doc="<%= returns._id %>" style="display: inline;">
+       <a href="/updata/<%= returns._id %>">updata</a> 
+      </button>
+      <script>const trashcan = document.querySelector('button.delete');
+    
+        trashcan.addEventListener('click', (e) => {
+          const endpoint = `/productdel/${trashcan.dataset.doc}`;
+          fetch(endpoint, {
+            method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(data => window.location.href = data.redirect)
+          .catch(err => console.log(err));
+        });
+    
+     
+        </script>
+      <% } else { %>
+        <% if (returns.number > 0) { %>
+          <button class="cart btn" data-doc="<%= returns._id %>" style="display: inline;">
+          cart
+        </button>
+        <% } else {%>
+       <h1 style="color: red;">sold out</h1>
+     <% } %> 
+<script>
+    
+  const cart = document.querySelector('button.cart');
+  
+  cart.addEventListener('click', (e) => {
+    const endpoint = `/add-to-cart/${cart.dataset.doc}`;
+    fetch(endpoint, {
+      method:'POST',
+    })
+    .then(response => response.json())
+    .then(data => window.location.href = data.redirect)
+    .catch(err => console.log(err));
+  });
+
+</script>
+          <% } %>
+</div>
+
+<%- include('partials/footer'); -%>

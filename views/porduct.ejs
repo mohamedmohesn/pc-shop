@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+
+<div class="row row-cols-1 row-cols-md-3 " style="margin-left: 150px; margin-right: 150px;  height: 400px;" >
+    <% if (use.length > 0) { %>
+        <% use.forEach(use => { %>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="/uploads/<%= use.image %>" class="card-img card-img-top" alt="<%= use.name %>" style=" height: 300px"/>
+        <div class="card-body">
+            <h4 class="card-title">name: <%= use.name %></h4>
+          <h5 class="card-title">number of item: <%= use.number %></h5>
+          <p class="card-text">price: <%= use.price %></p>
+          <a href="/detail/<%= use._id %>" class="btn btn-primary">product details</a>
+        </div>
+      </div>
+    </div>
+    <%  })}else{ %>
+      <br><br>
+      <h1>no products</h1>
+      <% } %> 
+  </div>
+
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+
+ <% if (use.length > 0) { %>
+    <% use.forEach(use => { %>
+<div class="card">
+    <h5 class="card-header"><%= use.order.name %></h5>
+    <div class="card-body">
+      <h5 class="card-title">price: <%= use.priceitem %></h5>
+      <p class="card-text">qty: <%= use.itemqty %></p>
+      <a href="/showdetail/<%= use._id %>" class="btn btn-primary">Go details</a>
+    </div>
+  </div>
+  <%  })}else{ %>
+    <h5>no order</h5>
+      <% } %> 
+      <%- include('partials/footer'); -%>
