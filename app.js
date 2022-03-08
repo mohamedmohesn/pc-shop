@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 // database connection
 const port = app.listen(process.env.PORT || 3000)
 
-const dbURI = 'mongodb://127.0.0.1:27017/product';
+const dbURI =process.env.dbURI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true , useFindAndModify:false})
   .then((result) => console.log("3000"))
   .catch((err) => console.log(err));
